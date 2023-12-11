@@ -8,6 +8,7 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
+
 class FileStorage:
     """File Storage class"""
     __file_path = "file.json"
@@ -33,7 +34,8 @@ class FileStorage:
     def reload(self):
         """Deserializes the JSON file to __objects"""
         try:
-            with open(FileStorage.__file_path, mode="r", encoding="utf-8") as f:
+            with open(FileStorage.__file_path, mode="r",
+                    encoding="utf-8") as f:
                 serial_dict = json.load(f)
                 for key, value in serial_dict.items():
                     class_name = value["__class__"]
@@ -53,5 +55,3 @@ class FileStorage:
     def close(self):
         """Calls reload() method for deserializing the JSON file"""
         self.reload()
-
-

@@ -9,6 +9,7 @@ from models.place import Place
 from models.review import Review
 from models.engine.file_storage import FileStorage
 
+
 class HBNBCommand(cmd.Cmd):
     """HBNBCommand class"""
     prompt = '(hbnb) '
@@ -125,6 +126,6 @@ class HBNBCommand(cmd.Cmd):
         """Help command to display all available commands"""
         cmd.Cmd.do_help(self, arg)
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
