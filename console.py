@@ -3,7 +3,7 @@
 This module contains the HBNBCommand interpreter
 """
 import cmd
-from models import storage
+from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -167,7 +167,7 @@ class HBNBCommand(cmd.Cmd):
         attribute_value = args[3].strip('"')
 
         if hasattr(obj, attribute_name):
-            attribute_type = type(getattr(obj), attribute_name))
+            attribute_type = type(getattr(obj), attribute_name)
             setattr(obj, attribute_name, attribute_type(attribute_value))
             storage.save()
         else:
